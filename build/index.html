@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <title>Localgiving API</title>
+</head>
+<body>
+<div class="container">
+    <h1>Localgiving API</h1>
+    <p><p>You want an API? I&#39;ll give you an API</p>
+    </p>
+    
+        <div id="sw-default-produces" class="sw-default-value">
+            <span class="sw-default-value-header">Default response content-types:</span>
+            application/json
+        </div>
+    
+    <div id="sw-schemes" class="sw-default-value">
+        <span class="sw-default-value-header">Schemes:</span>
+        https
+    </div>
+    
+        
+        <h2 id="swagger--summary-tags">Summary</h2>
+            <h3 id="tag-Members" class="swagger-summary-tag">Tag: Members</h3>
+            <p></p>
+        
+            <table class="table table-bordered table-condensed swagger--summary">
+                <thead>
+                <tr>
+                    <th>Operation</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#operation--search-get">GET /search</a></td>
+                        <td><p>Member search</p>
+        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 id="tag-Search" class="swagger-summary-tag">Tag: Search</h3>
+            <p></p>
+        
+            <table class="table table-bordered table-condensed swagger--summary">
+                <thead>
+                <tr>
+                    <th>Operation</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#operation--search-get">GET /search</a></td>
+                        <td><p>Member search</p>
+        </td>
+                    </tr>
+                </tbody>
+            </table>
+        
+    
+    
+    
+    <h2>Paths</h2>
+    
+        
+        <span id="path--search"></span>
+            <div id="operation--search-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Member search</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/search</strong></h3>
+                        Tags:
+                            <a href="#tag-Members">Members</a>, 
+                            <a href="#tag-Search">Search</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>The Search endpoint returns information about members of the <em>Localgiving</em> platform. The response includes publically available information about the charities returned.</p>
+            <p>Potentially sensitive data, such as locations for organisations that work with vulnerable people, will not be returned, or will not be accurate.</p>
+            <p>Pagination is based on offset values rather than &quot;pages&quot;.</p>
+            <p>In the API, &quot;VCO&quot; and member are interchangable.</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                location
+                                            <td><p>A location - UK postcode, town or county.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                name
+                                            <td><p>The name of the charity, fundraiser or appeal.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                num
+                                            <td><p>The number of results to return.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">number</span>    <span class="json-property-format">(int)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                start
+                                            <td><p>The offset of the start of results, zero based</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">number</span>    <span class="json-property-format">(int)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                latitude
+                                            <td><p>Latitude component of location. Results be returned based on proximity.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">number</span>    <span class="json-property-format">(double)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                longitude
+                                            <td><p>Longitude component of location. Results be returned based on proximity.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">number</span>    <span class="json-property-format">(double)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                radius
+                                            <td><p>The radius component of the location in miles. Results will be returned that fall within this radius if a longitude and latitude is supplied.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">number</span>    <span class="json-property-format">(double)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                cause
+                                            <td><p>Causes - can be any of the below:</p>
+                                        <ul>
+                                        <li><strong>1</strong>: After school clubs</li>
+                                        <li><strong>2</strong>: Arts, Culture &amp; Heritage</li>
+                                        <li><strong>3</strong>: Community Support &amp; Development</li>
+                                        <li><strong>4</strong>: Counselling, Advice &amp; Mentoring</li>
+                                        <li><strong>5</strong>: Disability</li>
+                                        <li><strong>6</strong>: Education &amp; Training</li>
+                                        <li><strong>7</strong>: Environment</li>
+                                        <li><strong>8</strong>: Health &amp; Wellbeing</li>
+                                        <li><strong>9</strong>: Hospices</li>
+                                        <li><strong>10</strong>: Housing / Homelessness</li>
+                                        <li><strong>11</strong>: Human Rights</li>
+                                        <li><strong>12</strong>: IT &amp; Technology</li>
+                                        <li><strong>13</strong> - Social Welfare</li>
+                                        <li><strong>14</strong>: Sports &amp; Recreation</li>
+                                        <li><strong>15</strong>: Animals</li>
+                                        <li><strong>30</strong>: Other</li>
+                                        </ul>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">number</span>    <span class="json-property-format">(int)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                region
+                                            <td><p>Region - any of the below: </p>
+                                        <ul>
+                                        <li><strong>1</strong>: London</li>
+                                        <li><strong>2</strong>:    South East</li>
+                                        <li><strong>11</strong>:    South West</li>
+                                        <li><strong>17</strong>:    East of England</li>
+                                        <li><strong>23</strong>:    West Midlands</li>
+                                        <li><strong>29</strong>:    East Midlands</li>
+                                        <li><strong>35</strong>:    North West</li>
+                                        <li><strong>45</strong>:    North East</li>
+                                        <li><strong>48</strong>:    Yorkshire and Humberside</li>
+                                        <li><strong>49</strong>:    Wales</li>
+                                        <li><strong>63</strong>:    Scotland</li>
+                                        <li><strong>95</strong>:    Northern Ireland</li>
+                                        </ul>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">number</span>    <span class="json-property-format">(int)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                campaign_id
+                                            <td><p>Campaign ID. Used internally for active campaigns. Please contact support if you wish to use it.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">number</span>    <span class="json-property-format">(int)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                cf_id
+                                            <td><p>Community Foundation ID. Deprecated.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">number</span>    <span class="json-property-format">(int)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                map
+                                            <td><p>Longitude component of location.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">number</span>    <span class="json-property-format">(double)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                        <section class="sw-responses">
+                                <p><a href="#sw-default-produces">Uses default content-types: </a>
+                                    <span class="label label-default">application/json</span> 
+                                </p>
+                            
+                            <dl>
+                                    <dt class="sw-response-200">
+                                        200 OK
+                                    
+                                    </dt>
+                                    <dd class="sw-response-200">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>An array of products</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                            
+                                                                            <section class="json-schema-array-items">
+                                                                                <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/Member">Member</a>
+                                                                                </span>
+                                                                                <span class="json-property-range" title="Value limits"></span>
+                                                                                
+                                                                                <div class="json-inner-schema">
+                                                                                    
+                                                                                </div>
+                                                                            </section>    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                                    <dt class="sw-response-default">
+                                        default 
+                                    
+                                    </dt>
+                                    <dd class="sw-response-default">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Unexpected error</p>
+                                            
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                    </div>
+                                                </div></div>
+                                            
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
+     
+    
+                       
+        <h2>Schema definitions</h2>
+    
+            
+                <div id="definition-Error" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/Error"></a>Error:
+                                    <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                            
+                                    <section class="json-schema-properties">
+                                        <dl>
+                                                <dt data-property-name="code">
+                                                    <span class="json-property-name">code:</span>
+                                                    <span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="message">
+                                                    <span class="json-property-name">message:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="fields">
+                                                    <span class="json-property-name">fields:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                        </dl>
+                                    </section>
+                    </div>
+                </div>        
+                <div id="definition-Member" class="panel panel-definition">
+                        <div class="panel-heading">
+                                <h3 class="panel-title"><a name="/definitions/Member"></a>Member:
+                                    <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                                </h3>
+                        </div>
+                    <div class="panel-body">
+                                <section class="json-schema-description">
+                                    <p>A Member of Localgiving - a local charity or community group.</p>
+                            
+                                </section>
+                            
+                                    <section class="json-schema-properties">
+                                        <dl>
+                                                <dt data-property-name="vco_id">
+                                                    <span class="json-property-name">vco_id:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    <p>Localgiving identifier for a chazza</p>
+                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="vco_cf_id">
+                                                    <span class="json-property-name">vco_cf_id:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    <p>The Community Foundation the charity is associated with, if any.</p>
+                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="vco_name">
+                                                    <span class="json-property-name">vco_name:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    <p>The full charity name</p>
+                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="vco_headline">
+                                                    <span class="json-property-name">vco_headline:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    <p>Brief headline supplied by the charity.</p>
+                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="vco_mission_statement">
+                                                    <span class="json-property-name">vco_mission_statement:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    <p>Mission statement of the charity</p>
+                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="vco_community_need">
+                                                    <span class="json-property-name">vco_community_need:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    <p>What community needs the charity satisfies</p>
+                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="url_frag">
+                                                    <span class="json-property-name">url_frag:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    <p>URL fragment for the charity - ie <a href="https://&quot;localgiving.com/`url_frag`">https://&quot;localgiving.com/`url_frag`</a></p>
+                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="vco_reg_charity_num">
+                                                    <span class="json-property-name">vco_reg_charity_num:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    <p>The charitys registered charity commission number.</p>
+                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="picture">
+                                                    <span class="json-property-name">picture:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="logo">
+                                                    <span class="json-property-name">logo:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="all_causes">
+                                                    <span class="json-property-name">all_causes:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="add_town">
+                                                    <span class="json-property-name">add_town:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="add_county">
+                                                    <span class="json-property-name">add_county:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="region_name">
+                                                    <span class="json-property-name">region_name:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="add_postcode">
+                                                    <span class="json-property-name">add_postcode:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="created_date">
+                                                    <span class="json-property-name">created_date:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="volunteer_needs">
+                                                    <span class="json-property-name">volunteer_needs:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="membership_type">
+                                                    <span class="json-property-name">membership_type:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="is_new">
+                                                    <span class="json-property-name">is_new:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="volunteer">
+                                                    <span class="json-property-name">volunteer:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="url">
+                                                    <span class="json-property-name">url:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="donate_url">
+                                                    <span class="json-property-name">donate_url:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="donate_monthly_url">
+                                                    <span class="json-property-name">donate_monthly_url:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="total_donations">
+                                                    <span class="json-property-name">total_donations:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="amount_raised">
+                                                    <span class="json-property-name">amount_raised:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="campaigns">
+                                                    <span class="json-property-name">campaigns:</span>
+                                                    <span class="json-property-type">string</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="is_favourite">
+                                                    <span class="json-property-name">is_favourite:</span>
+                                                    <span class="json-property-type">boolean</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    <p>Image URL representing the product</p>
+                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="latitude">
+                                                    <span class="json-property-name">latitude:</span>
+                                                    <span class="json-property-type">number</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                                <dt data-property-name="longitude">
+                                                    <span class="json-property-name">longitude:</span>
+                                                    <span class="json-property-type">number</span>
+                                                    <span class="json-property-range" title="Value limits"></span>
+                                                    
+                                                </dt>
+                                                <dd>
+                                                    
+                                                    <div class="json-inner-schema">
+                                                        
+                                                    </div>
+                                                </dd>
+                                        </dl>
+                                    </section>
+                    </div>
+                </div>
+</div>
+</body>
+</html>
