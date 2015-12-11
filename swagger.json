@@ -1,0 +1,260 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Localgiving API",
+        "description": "You want an API? I'll give you an API",
+        "version": "1.0.0"
+    },
+    "host": "graph.localgiving.com",
+    "schemes": [
+        "https"
+    ],
+    "basePath": "/v1",
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/search": {
+            "get": {
+                "summary": "Member search",
+                "description": "The Search endpoint returns information about members of the *Localgiving* platform. The response includes publically available information about the charities returned.\n\nPotentially sensitive data, such as locations for organisations that work with vulnerable people, will not be returned, or will not be accurate.\n\nPagination is based on offset values rather than \"pages\".\n\nIn the API, \"VCO\" and member are interchangable.\n",
+                "parameters": [
+                    {
+                        "name": "location",
+                        "in": "query",
+                        "description": "A location - UK postcode, town or county.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "The name of the charity, fundraiser or appeal.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "num",
+                        "in": "query",
+                        "description": "The number of results to return.",
+                        "required": false,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "The offset of the start of results, zero based",
+                        "required": false,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "latitude",
+                        "in": "query",
+                        "description": "Latitude component of location. Results be returned based on proximity.",
+                        "required": false,
+                        "type": "number",
+                        "format": "double"
+                    },
+                    {
+                        "name": "longitude",
+                        "in": "query",
+                        "description": "Longitude component of location. Results be returned based on proximity.",
+                        "required": false,
+                        "type": "number",
+                        "format": "double"
+                    },
+                    {
+                        "name": "radius",
+                        "in": "query",
+                        "description": "The radius component of the location in miles. Results will be returned that fall within this radius if a longitude and latitude is supplied.",
+                        "required": false,
+                        "type": "number",
+                        "format": "double"
+                    },
+                    {
+                        "name": "cause",
+                        "in": "query",
+                        "description": "Causes - can be any of the below:\n- **1**: After school clubs\n- **2**: Arts, Culture & Heritage\n- **3**: Community Support & Development\n- **4**: Counselling, Advice & Mentoring\n- **5**: Disability\n- **6**: Education & Training\n- **7**: Environment\n- **8**: Health & Wellbeing\n- **9**: Hospices\n- **10**: Housing / Homelessness\n- **11**: Human Rights\n- **12**: IT & Technology\n- **13** - Social Welfare\n- **14**: Sports & Recreation\n- **15**: Animals\n- **30**: Other",
+                        "required": false,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "region",
+                        "in": "query",
+                        "description": "Region - any of the below: \n- **1**: London\n- **2**:\tSouth East\n- **11**:\tSouth West\n- **17**:\tEast of England\n- **23**:\tWest Midlands\n- **29**:\tEast Midlands\n- **35**:\tNorth West\n- **45**:\tNorth East\n- **48**:\tYorkshire and Humberside\n- **49**:\tWales\n- **63**:\tScotland\n- **95**:\tNorthern Ireland",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "campaign_id",
+                        "in": "query",
+                        "description": "Campaign ID. Used internally for active campaigns. Please contact support if you wish to use it.",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "cf_id",
+                        "in": "query",
+                        "description": "Community Foundation ID. Deprecated.",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "map",
+                        "in": "query",
+                        "description": "Longitude component of location.",
+                        "required": true,
+                        "type": "number",
+                        "format": "double"
+                    }
+                ],
+                "tags": [
+                    "Members",
+                    "Search"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An array of products",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Member"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Member": {
+            "type": "object",
+            "description": "A Member of Localgiving - a local charity or community group.",
+            "properties": {
+                "vco_id": {
+                    "type": "string",
+                    "description": "Localgiving identifier for a chazza"
+                },
+                "vco_cf_id": {
+                    "type": "string",
+                    "description": "The Community Foundation the charity is associated with, if any."
+                },
+                "vco_name": {
+                    "type": "string",
+                    "description": "The full charity name"
+                },
+                "vco_headline": {
+                    "type": "string",
+                    "description": "Brief headline supplied by the charity."
+                },
+                "vco_mission_statement": {
+                    "type": "string",
+                    "description": "Mission statement of the charity"
+                },
+                "vco_community_need": {
+                    "type": "string",
+                    "description": "What community needs the charity satisfies"
+                },
+                "url_frag": {
+                    "type": "string",
+                    "description": "URL fragment for the charity - ie https://\"localgiving.com/`url_frag`"
+                },
+                "vco_reg_charity_num": {
+                    "type": "string",
+                    "description": "The charitys registered charity commission number."
+                },
+                "picture": {
+                    "type": "string"
+                },
+                "logo": {
+                    "type": "string"
+                },
+                "all_causes": {
+                    "type": "string"
+                },
+                "add_town": {
+                    "type": "string"
+                },
+                "add_county": {
+                    "type": "string"
+                },
+                "region_name": {
+                    "type": "string"
+                },
+                "add_postcode": {
+                    "type": "string"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "volunteer_needs": {
+                    "type": "string"
+                },
+                "membership_type": {
+                    "type": "string"
+                },
+                "is_new": {
+                    "type": "string"
+                },
+                "volunteer": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "donate_url": {
+                    "type": "string"
+                },
+                "donate_monthly_url": {
+                    "type": "string"
+                },
+                "total_donations": {
+                    "type": "string"
+                },
+                "amount_raised": {
+                    "type": "string"
+                },
+                "campaigns": {
+                    "type": "string"
+                },
+                "is_favourite": {
+                    "type": "boolean",
+                    "description": "Image URL representing the product"
+                },
+                "latitude": {
+                    "type": "number"
+                },
+                "longitude": {
+                    "type": "number"
+                }
+            }
+        },
+        "Error": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "fields": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
